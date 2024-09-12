@@ -3,6 +3,8 @@ import { BasePage } from './BasePage';
 
 export class ChargePointPage extends BasePage {
   
+  // This is a child class(sub-class) that can use the attributes and functions from the parent class
+
   // Initiate the web elements
   titleOfChargePoint: Locator;
   inputSerialNumber: Locator;
@@ -11,7 +13,7 @@ export class ChargePointPage extends BasePage {
   xButton: Locator;
   
   constructor(page: Page){
-    // To inherit the super class
+    // To inherit from the super class
     super(page);
 
     // To locate web elements and define them as the attributes of the class object

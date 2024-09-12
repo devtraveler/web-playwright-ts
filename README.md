@@ -10,8 +10,10 @@ Then clone the repo and type the given command below on the terminal to install 
 - npm init playwright@latest
 
 ## To run test file
-- for headless mode and all 3 browser : npx playwright test --headed --project chromium
-- to see the browser and run it on chromium browser: npx playwright test --headed --project chromium
+- Firstly download the react app 
+- Then the react app should be started with 'npm start' command
+- Then type for headless mode and runnint the test in all 3 browser : npx playwright test
+- If you want to run the test in UI mode ex: on the chromium browser then type 'npx playwright test --headed --project chromium' command
 
 ## Reach the HTML report
 - npx playwright show-report  
