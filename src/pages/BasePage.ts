@@ -8,7 +8,7 @@ export class BasePage {
     this.page = page;
   }
 
-  // Define common functions below
+  // Define the functions that represent the BasePage below
   async navigate(url: string): Promise<void> {
     await this.page.goto(url);
   }

@@ -1,8 +1,10 @@
 import { test, expect } from '@playwright/test';
 import { ChargePointPage } from '../pages/ChargePointPage.ts';
+import { generateRandom6DigitNumber } from '../utils.ts';
 
 test.describe('Task Test Case', () => {
   let chargePointPage: ChargePointPage;
+  const randomNumber = generateRandom6DigitNumber();
 
   // With this method, this block runs before executing each test cases in this test block,
   test.beforeEach(async ({ page }) => {
@@ -14,21 +16,11 @@ test.describe('Task Test Case', () => {
 
     // First way - Best Practice
     await chargePointPage.verifyChargePointPageOpened();
-    await chargePointPage.typeSerialNumber();
+    await chargePointPage.typeSerialNumber(randomNumber);
     await chargePointPage.clickAddButton();
-    await chargePointPage.verifySerialNumberIsListed();
+    await chargePointPage.verifySerialNumberIsListed(randomNumber);
     await chargePointPage.clickXButton();
     await chargePointPage.verifySerialNumberIsRemovedFromList();
-
-    // Second way
-    /*
-    await expect(page).toHaveTitle(/React App/);
-    await expect(page.getByText('Charge Point Installation Form')).toBeVisible();
-    await expect(page.locator('//input')).toBeVisible();
-    await page.locator('//input').fill('11111');
-    await page.locator('//button[text()="Add"]').click();
-    await expect(page.locator('//ul/li[1]')).toBeVisible();
-    */
     
 
   });

@@ -33,10 +33,10 @@ export class ChargePointPage extends BasePage {
   }
 
   // Type a serial number in the Serial Number input
-  async typeSerialNumber(): Promise<void> {
+  async typeSerialNumber(serialNumber: string): Promise<void> {
    
     await expect(this.inputSerialNumber).toBeVisible();
-    await this.inputSerialNumber.fill('11111');
+    await this.inputSerialNumber.fill(serialNumber);
   
   }
 
@@ -48,10 +48,10 @@ export class ChargePointPage extends BasePage {
 }
 
   // Verify the added Serial Number is listed
-  async verifySerialNumberIsListed(): Promise<void> {
+  async verifySerialNumberIsListed(serialNumber: string): Promise<void> {
 
     await expect(this.serialNumberOnList).toBeVisible();
-    await expect(this.serialNumberOnList).toContainText('11111');
+    await expect(this.serialNumberOnList).toContainText(serialNumber);
 
   }
 
